@@ -1,0 +1,5 @@
+Element is defined by a start tag and an end tag.
+
+An element is everything from the start tag to the end tag.
+
+Some elements have no content or closing tag, these are empty elements.

@@ -1,0 +1,1 @@
+This is a new way to write to a file. I learned it today.

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Med-Updates Web</title>
+    </head>
+    <body>
+        <h1>Hello Med-Enthusiasts!</h1>
+        <h2>The Only Site You Get The Most Recent And Juicy Gists and Updates on Medicine</h2>
+
+        <p>How may we help you today?</p>
+
+        <form action="/acii-art" method="POST">
+            <label for="text">Enter text to convert:</label>
+            <textarea id="text" name="text" rows="3" cols="40" required></textarea>
+            <br><br>
+
+        </form>
+    </body>
+</html>
+
+
+func countResponseTimeRegressions(responseTimes []int32) int32 { // Write your code heresum := int32(0)count := int32(0)match := int32(0)for i, num := range responseTimes {div := int32(0)if i > 0 {div = sum / count}if i > 0 && num > div {match += 1}sum += numcount += 1}return match}
