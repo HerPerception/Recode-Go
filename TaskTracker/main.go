@@ -15,13 +15,13 @@ TaskLoop:
 		scanner := bufio.NewScanner(os.Stdin)
 		scanner.Scan()
 		option := scanner.Text()
+		if option == "4" {
+			return
+		}
 		if len(option) != 1 {
 			continue TaskLoop
 		} else if option != "1" && option != "2" && option != "3" {
 			continue TaskLoop
-		}
-		if option == "4" {
-			return
 		}
 
 		if option == "1" {
@@ -32,7 +32,12 @@ TaskLoop:
 			ViewTasks(NewTasks)
 		}
 		if option == "3" {
-			DeleteTask(TaskSlice)
+			var err error
+			NewTasks, err = DeleteTask(NewTasks)
+			if err != nil {
+				fmt.Println(err)
+				ViewTasks(NewTasks)
+			}
 			continue TaskLoop
 		}
 	}
