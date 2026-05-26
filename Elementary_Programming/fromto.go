@@ -45,9 +45,9 @@ func FromTo(from int64, to int64) string {
 	return s
 }
 
-func main() {
-	fmt.Print(FromTo(1, 10))
-	fmt.Print(FromTo(10, 1))
-	fmt.Print(FromTo(10, 10))
-	fmt.Print(FromTo(100, 10))
-}
+// func main() {
+// 	fmt.Print(FromTo(1, 10))
+// 	fmt.Print(FromTo(10, 1))
+// 	fmt.Print(FromTo(10, 10))
+// 	fmt.Print(FromTo(100, 10))
+// }

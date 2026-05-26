@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func LastWord() {
 	if len(os.Args) != 2 {
 		return
 	}
@@ -16,7 +16,7 @@ func main() {
 	word := []string{}
 	i := 0
 	n := 0
-	for index := len(s)-1; index >= 0; index-- {
+	for index := len(s) - 1; index >= 0; index-- {
 		if index < len(s)-1 && s[index] != ' ' {
 			i = index
 			break

@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func FindPrevPrime(nb int) int {
 	n := 0
 	prime := true
@@ -23,6 +21,6 @@ func FindPrevPrime(nb int) int {
 	return n
 }
 
-func main() {
-	fmt.Println(FindPrevPrime(34))
-}
+// func main() {
+// 	fmt.Println(FindPrevPrime(34))
+// }

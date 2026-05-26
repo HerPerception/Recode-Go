@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func Itoa(n int) string {
 	str := ""
 	s := ""
@@ -29,9 +25,9 @@ func Itoa(n int) string {
 	return str
 }
 
-func main() {
-	fmt.Println(Itoa(12345))
-	fmt.Println(Itoa(0))
-	fmt.Println(Itoa(-1234))
-	fmt.Println(Itoa(987654321))
-}
+// func main() {
+// 	fmt.Println(Itoa(12345))
+// 	fmt.Println(Itoa(0))
+// 	fmt.Println(Itoa(-1234))
+// 	fmt.Println(Itoa(987654321))
+// }

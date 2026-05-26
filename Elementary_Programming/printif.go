@@ -1,9 +1,7 @@
 package main
 
-import "fmt"
+func printIf(s string) string {
 
-func printIf(s string)string {
-	
 	if len(s) == 0 {
 		return "G\n"
 	}
@@ -15,9 +13,9 @@ func printIf(s string)string {
 	return "G\n"
 }
 
-func main() {
-	fmt.Print(printIf("abcdefz"))
-	fmt.Print(printIf("abc"))
-	fmt.Print(printIf(""))
-	fmt.Print(printIf("14"))
-}
+// func main() {
+// 	fmt.Print(printIf("abcdefz"))
+// 	fmt.Print(printIf("abc"))
+// 	fmt.Print(printIf(""))
+// 	fmt.Print(printIf("14"))
+// }

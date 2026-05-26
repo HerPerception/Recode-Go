@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func CleanStr() {
 	if len(os.Args) != 2 || os.Args[1] == "" {
 		fmt.Println()
 		return

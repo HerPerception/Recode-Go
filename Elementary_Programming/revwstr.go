@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func RevWStr() {
 	if len(os.Args) != 2 {
 		fmt.Println()
 		return

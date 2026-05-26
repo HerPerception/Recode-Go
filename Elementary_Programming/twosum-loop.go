@@ -2,8 +2,6 @@
 
 package main
 
-import "fmt"
-
 func TwoSum(num []int, target int) ([]int, bool) {
 	newResult := []int{}
 	i, j := 0, len(num)-1
@@ -20,6 +18,6 @@ func TwoSum(num []int, target int) ([]int, bool) {
 	return newResult, len(newResult) != 0
 }
 
-func main() {
-	fmt.Println(TwoSum([]int{-3, 5, 7, 13, 8, 9, 3, 11}, 10))
-}
+// func main() {
+// 	fmt.Println(TwoSum([]int{-3, 5, 7, 13, 8, 9, 3, 11}, 10))
+// }

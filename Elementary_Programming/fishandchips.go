@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func fishAndChips(n int) string {
 	if n < 0 {
 		return "error: number is negative"
@@ -12,12 +10,13 @@ func fishAndChips(n int) string {
 	} else if n%3 == 0 {
 		return "chips"
 	}
-		return "error: non-divisible"
+	return "error: non-divisible"
 }
-func main(){
-	fmt.Println(fishAndChips(4))
-	fmt.Println(fishAndChips(9))
-	fmt.Println(fishAndChips(6))
-	fmt.Println(fishAndChips(-4))
-	fmt.Println(fishAndChips(7))
-}
+
+// func main(){
+// 	fmt.Println(fishAndChips(4))
+// 	fmt.Println(fishAndChips(9))
+// 	fmt.Println(fishAndChips(6))
+// 	fmt.Println(fishAndChips(-4))
+// 	fmt.Println(fishAndChips(7))
+// }

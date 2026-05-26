@@ -17,9 +17,9 @@ func ThirdTimeIsACharm(str string) string {
 	return fmt.Sprintf("%s\n", text)
 }
 
-func main() {
-	fmt.Print(ThirdTimeIsACharm("123456789"))
-	fmt.Print(ThirdTimeIsACharm(""))
-	fmt.Print(ThirdTimeIsACharm("a b c d e f"))
-	fmt.Print(ThirdTimeIsACharm("12"))
-}
+// func main() {
+// 	fmt.Print(ThirdTimeIsACharm("123456789"))
+// 	fmt.Print(ThirdTimeIsACharm(""))
+// 	fmt.Print(ThirdTimeIsACharm("a b c d e f"))
+// 	fmt.Print(ThirdTimeIsACharm("12"))
+// }

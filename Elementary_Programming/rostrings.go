@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func main() {
+func Rostring() {
 	if len(os.Args) != 2 {
 		fmt.Println()
 		return

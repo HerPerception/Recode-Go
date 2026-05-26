@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func ExpandStr() {
 	if len(os.Args) != 2 || len(os.Args[1]) == 0 {
 		fmt.Println()
 		return

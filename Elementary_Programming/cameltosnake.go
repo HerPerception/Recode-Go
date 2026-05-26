@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func camelToSnakeCase(s string) string {
 	if len(s) == 0 {
 		return ""
@@ -33,13 +31,13 @@ func camelToSnakeCase(s string) string {
 	return word
 }
 
-func main() {
-	fmt.Println(camelToSnakeCase("HellWorld"))
-	fmt.Println(camelToSnakeCase("helLOWORld"))
-	fmt.Println(camelToSnakeCase("camelCase"))
-	fmt.Println(camelToSnakeCase("CamelCase"))
-	fmt.Println(camelToSnakeCase("CAMELtoSnackCASE"))
-	fmt.Println(camelToSnakeCase("CamelToSnakeCase"))
-	fmt.Println(camelToSnakeCase("hey2"))
+// func main() {
+// 	fmt.Println(camelToSnakeCase("HellWorld"))
+// 	fmt.Println(camelToSnakeCase("helLOWORld"))
+// 	fmt.Println(camelToSnakeCase("camelCase"))
+// 	fmt.Println(camelToSnakeCase("CamelCase"))
+// 	fmt.Println(camelToSnakeCase("CAMELtoSnackCASE"))
+// 	fmt.Println(camelToSnakeCase("CamelToSnakeCase"))
+// 	fmt.Println(camelToSnakeCase("hey2"))
 
-}
+// }

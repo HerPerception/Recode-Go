@@ -2,9 +2,7 @@
 
 package main
 
-import "fmt"
-
-func TwoSum(num []int, target int) ([]int, bool) {
+func TwoSumM(num []int, target int) ([]int, bool) {
 	myMap := make(map[int]int)
 	newResult := []int{}
 	for i, each := range num {
@@ -20,6 +18,6 @@ func TwoSum(num []int, target int) ([]int, bool) {
 	return newResult, len(newResult) != 0
 }
 
-func main() {
-	fmt.Println(TwoSum([]int{-3, 5, 7, 8, 9, 3, 11, 13}, 1))
-}
+// func main() {
+// 	fmt.Println(TwoSum([]int{-3, 5, 7, 8, 9, 3, 11, 13}, 1))
+// }

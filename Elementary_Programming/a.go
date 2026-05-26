@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main(){
+func Print() {
 	fmt.Println("a")
 	fmt.Println(string('a'))
 	fmt.Println(1)

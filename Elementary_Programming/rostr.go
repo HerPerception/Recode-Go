@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func RotateStr() {
 	if len(os.Args) != 2 {
 		fmt.Println()
 		return

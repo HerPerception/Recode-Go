@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func GCD() {
 	if len(os.Args) != 3 {
 		return
 	}

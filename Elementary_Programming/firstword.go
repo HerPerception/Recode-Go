@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func FirstWord() {
 	if len(os.Args) != 2 {
 		return
 	}

@@ -32,6 +32,6 @@ func PrintCombN(n int) {
 	backtrack(0)
 }
 
-func main() {
-	PrintCombN(2)
-}
+// func main() {
+// 	PrintCombN(2)
+// }

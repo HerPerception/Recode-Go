@@ -1,5 +1,4 @@
 package main
-import "fmt"
 
 func aToAn(s string) string {
 	if s[0] == 'a' || s[0] == 'e' || s[0] == 'i' || s[0] == 'o' || s[0] == 'u' || s[0] == 'h' {
@@ -27,8 +26,8 @@ func Vowel(slice []string) string {
 	return word
 }
 
-func main() {
-	fmt.Println(aToAn("book"))
-	fmt.Println(aToAn("apple"))
-	fmt.Println(Vowel([]string{"There", "it", "was", ".", "A", "amazing", "rock", "under", "a", "orange", "tree", ".", "A", "book"}))
-}
+// func main() {
+// 	fmt.Println(aToAn("book"))
+// 	fmt.Println(aToAn("apple"))
+// 	fmt.Println(Vowel([]string{"There", "it", "was", ".", "A", "amazing", "rock", "under", "a", "orange", "tree", ".", "A", "book"}))
+// }

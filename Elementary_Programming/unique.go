@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func WeAreUnique(str1, str2 string) string {
 	if len(str1) == 0 && len(str2) == 0 {
 		return ""
@@ -18,8 +14,8 @@ func WeAreUnique(str1, str2 string) string {
 	return text
 }
 
-func main() {
-	fmt.Println(WeAreUnique("foo", "boo"))
-	fmt.Println(WeAreUnique("", ""))
-	fmt.Println(WeAreUnique("abc", "def"))
-}
+// func main() {
+// 	fmt.Println(WeAreUnique("foo", "boo"))
+// 	fmt.Println(WeAreUnique("", ""))
+// 	fmt.Println(WeAreUnique("abc", "def"))
+// }

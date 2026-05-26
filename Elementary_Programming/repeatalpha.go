@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main(){
+func RepeatAlpha() {
 	if len(os.Args) != 2 {
 		return
 	}
@@ -19,7 +19,7 @@ func main(){
 		}
 		if isLetter == true && (ch >= 'A' && ch <= 'Z') {
 			index = int(ch) - 64
-			for index > 0  {
+			for index > 0 {
 				word += string(ch)
 				index -= 1
 			}
@@ -29,10 +29,10 @@ func main(){
 				word += string(ch)
 				index -= 1
 			}
-		}  else {
+		} else {
 			word += string(ch)
 		}
-		
+
 	}
 	fmt.Println(word)
 }
