@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ASCII Art Web</title>
+    </head>
+    <body>
+                  <h1>ASCII-ART GENERATOR</h1>
+            <form>
+                <label for="text">enter text</label>
+                <textarea type="text" id="text" row="3" cols="50" required>{{.TEXT}}</textarea><br>
+                
+                <label>CHOOSE A BANNER FILE</label>
+                <input type="radio" id="standard" name="banner" value="standard" checked>
+                <label for="standard">standard</label><br>
+                <input type="radio" id="shadow" name="banner" value="shadow">
+               <label for="shadow">shadow</label><br>
+                <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+                 <label for="thinkertoy">thinkertoy</label><br>
+                <br>
+                <button type="submit">Generate Ascii</button>
+            </form>
+            <pre>{{.Art}}</pre>
+
+               
+    </body>
+</html>
