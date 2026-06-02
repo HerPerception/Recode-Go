@@ -1,64 +1,60 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 )
 
 var tpl = template.Must(template.ParseFiles("templates/index.html"))
 
-func HomeHandler(res http.ResponseWriter, req *http.Request) {
+type PageData struct {
+	UserText string
+	ASCIIArt string
+}
+
+func HomePage(res http.ResponseWriter, req *http.Request) {
 	if req.URL.Path != "/" {
-		http.Error(res, "404 Page Not Found", http.StatusNotFound)
+		http.Error(res, "Not Found", http.StatusNotFound)
 		return
 	}
-
-	//	fmt.Fprintln(res, "Hello There!")
-	// err := template.ParseFiles("templates/index.html")
-	// if err != nil {
-	// 	http.Error(res, "Internal server error", http.StatusInternalServerError)
-	// 	return
-	// }
 	err := tpl.Execute(res, nil)
 	if err != nil {
-		http.Error(res, "Internal Server Error", http.StatusInternalServerError)
+		http.Error(res, "Error parsing a file", http.StatusInternalServerError)
 		return
 	}
 }
 
-func ASCIIHandler(res http.ResponseWriter, req *http.Request) {
+func ASCIIPage(res http.ResponseWriter, req *http.Request) {
 	if req.URL.Path != "/ascii-art" {
-		http.Error(res, "Bad request", http.StatusBadRequest)
+		http.Error(res, "Not Found", http.StatusNotFound)
 		return
 	}
 	err := req.ParseForm()
 	if err != nil {
-		http.Error(res, "Internal server error", http.StatusInternalServerError)
+		http.Error(res, "Error with form content", http.StatusInternalServerError)
 		return
 	}
-	text := req.FormValue("text")
-	bans := req.FormValue("banner")
-	banner := fmt.Sprintf("%s.txt", bans)
+	in := req.FormValue("text")
+	banner := req.FormValue("banner")
 
 	bannerMap, err := MakeBanner(banner)
 	if err != nil {
-		http.Error(res, "Error with form value", http.StatusInternalServerError)
+		http.Error(res, "Error loading banner", http.StatusInternalServerError)
 		return
 	}
-	Art, err := GenerateArt(text, bannerMap)
+	Art, err := GenerateArt(in, bannerMap)
 	if err != nil {
-		http.Error(res, "Might be an error generating ASCII Art", http.StatusInternalServerError)
+		http.Error(res, "Error Generating ASCII Art", http.StatusInternalServerError)
 		return
 	}
-	err = tpl.Execute(res, Art)
-	if err != nil {
-		http.Error(res, "Error parsing output", http.StatusInternalServerError)
-		return
+	data := PageData{
+		UserText: in,
+		ASCIIArt: Art,
 	}
+	tpl.Execute(res, data)
 }
 func main() {
-	http.HandleFunc("/", HomeHandler)
-	http.HandleFunc("/ascii-art", ASCIIHandler)
+	http.HandleFunc("/", HomePage)
+	http.HandleFunc("/ascii-art", ASCIIPage)
 	http.ListenAndServe(":8080", nil)
 }

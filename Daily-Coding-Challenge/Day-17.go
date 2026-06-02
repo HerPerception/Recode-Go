@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // func FirstDuplicate(slice []any) (any, bool) {
 // 	myMap := make(map[any]string)
 // 	var val any
@@ -32,11 +30,12 @@ func FirstDuplicate[T comparable](items []T) (T, bool) {
 
 	return val, false
 }
-func main() {
-	fmt.Println(FirstDuplicate([]int{1, 2, 3, 2, 1}))
-	fmt.Println(FirstDuplicate([]string{"go", "js", "go", "js"}))
-	fmt.Println(FirstDuplicate([]int{}))
-	fmt.Println(FirstDuplicate([]int{1, 2, 3}))
-	fmt.Println(FirstDuplicate([]string{"a", "b", "c"}))
-	fmt.Println(FirstDuplicate([]bool{false, true, false}))
-}
+
+// func main() {
+// 	fmt.Println(FirstDuplicate([]int{1, 2, 3, 2, 1}))
+// 	fmt.Println(FirstDuplicate([]string{"go", "js", "go", "js"}))
+// 	fmt.Println(FirstDuplicate([]int{}))
+// 	fmt.Println(FirstDuplicate([]int{1, 2, 3}))
+// 	fmt.Println(FirstDuplicate([]string{"a", "b", "c"}))
+// 	fmt.Println(FirstDuplicate([]bool{false, true, false}))
+// }
