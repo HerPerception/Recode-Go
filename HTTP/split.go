@@ -5,5 +5,5 @@ import (
 )
 
 func SplitInput(input string) []string {
-	return strings.Split(input, "\\n")
+	return strings.Split(strings.ReplaceAll(input, "\r\n", "\n"), "\n")
 }

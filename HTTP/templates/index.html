@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASCII Art Web</title>
+   <style>
+body {
+  background-color: rgb(110, 233, 61);
+}
+</style>
 </head>
 <body>
     <form action="/ascii-art" method="POST">
@@ -23,9 +28,9 @@
 
         <button type="submit">Generate ASCII Art</button>
     </form>
-    {{if .ASCIIArt}}
+    
     <h3>Your Result:</h3>
     <pre>{{.ASCIIArt}}</pre>
-    {{end}}
+
 </body>
 </html>

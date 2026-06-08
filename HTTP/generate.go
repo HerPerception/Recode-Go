@@ -9,11 +9,12 @@ func GenerateArt(input string, banner map[rune][]string) (string, error) {
 	if len(input) == 0 {
 		return "", errors.New("empty input")
 	}
-	_, err := ValidateInput(input)
-	if err != nil {
-		return "", errors.New("unsupported character in input text")
-	}
 	slice := SplitInput(input)
+
+	// _, err := ValidateInput(input)
+	// if err != nil {
+	// 	return "", errors.New("unsupported character in input text")
+	// }
 	word := []string{}
 
 	allEmpty := true

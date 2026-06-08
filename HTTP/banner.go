@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"os"
-	"strings"
 )
 
 func MakeBanner(filename string) (map[rune][]string, error) {
@@ -14,7 +13,7 @@ func MakeBanner(filename string) (map[rune][]string, error) {
 	if len(data) == 0 {
 		return nil, errors.New("empty file")
 	}
-	line := strings.Split(strings.ReplaceAll(string(data), "\r\n", "\n"), "\n")
+	line := SplitInput(string(data))
 	line = line[1:]
 	if len(line) != 855 {
 		return nil, errors.New("invalid file content")
