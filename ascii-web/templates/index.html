@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Art Web</title>
+</head>
+<body>
+    <form action="/ascii-art" method="post">
+        <h1>ASCII Art Generator</h1>
+
+        <h3>Type Text Below</h3>
+        <textarea id="text" rows="3" cols="45" name="text" required></textarea>
+        <br>
+        <label for="banner">Choose Banner Style</label>
+        <br>
+        <input type="radio" name="banner" id="standard" value="standard.txt">
+        <label for="standard">standard</label>
+        <input type="radio" name="banner" id="shadow" value="shadow.txt">
+        <label for="shadow">shadow</label>
+        <input type="radio" name="banner" id="thinkertoy" value="thinkertoy.txt">
+        <label for="standard">thinkertoy</label>
+        
+        <br>
+
+        <button type="submit">generate</button>
+    </form>
+</body>
+</html>
