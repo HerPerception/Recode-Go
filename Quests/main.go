@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -10,10 +11,24 @@ func main() {
 		fmt.Println("Usage: go run map.go <input string>")
 		return
 	}
-	str := os.Args[1]
+	str := strings.ToLower(os.Args[1])
+	if strings.HasSuffix(os.Args[1], ".txt") {
+		data, err := os.ReadFile(os.Args[1])
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		str = strings.ToLower(string(data))
+	} //else {
+	// 	str = strings.ToLower(os.Args[1])
+	// }
+
 	charMap := make(map[rune]int)
 	slice := []rune{}
 	for _, ch := range str {
+		if ch == ' ' {
+			continue
+		}
 		if val, exists := charMap[ch]; exists {
 			charMap[ch] = val + 1
 		} else {
@@ -25,6 +40,6 @@ func main() {
 
 	}
 	for _, ch := range slice {
-		fmt.Printf("%c: %d\n", ch, charMap[ch])
+		fmt.Printf("%c -> %d\n", ch, charMap[ch])
 	}
 }
