@@ -12,10 +12,14 @@ func main() {
 		return
 	}
 	str := strings.ToLower(os.Args[1])
-	if strings.HasSuffix(os.Args[1], ".txt") {
+	if os.Args[1] == "data.txt" {
 		data, err := os.ReadFile(os.Args[1])
 		if err != nil {
 			fmt.Println(err)
+			return
+		}
+		if len(data) == 0 {
+			fmt.Println("An empty data file")
 			return
 		}
 		str = strings.ToLower(string(data))
