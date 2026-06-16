@@ -59,7 +59,7 @@ func ASCIIPage(write http.ResponseWriter, read *http.Request) {
 	artResult, err := Generator(textValue, bannerValue)
 	if err != nil {
 		// If the generator can't find a banner file, it's usually an internal issue
-		http.Error(write, "Error Generating ASCII Art", http.StatusInternalServerError)
+		http.Error(write, fmt.Sprintf("%v", err), http.StatusInternalServerError)
 		return
 	}
 
@@ -77,6 +77,10 @@ func ASCIIPage(write http.ResponseWriter, read *http.Request) {
 }
 
 func main() {
+	http.HandleFunc("/style.css", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, "templates/style.css")
+	})
+
 	http.HandleFunc("/", HomePage)
 	http.HandleFunc("/ascii-art", ASCIIPage)
 
