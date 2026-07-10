@@ -42,21 +42,27 @@ guessStart:
 			fmt.Printf("Your number is %d less than mine. Want to try again? 1. Yes,  2. Quit\n", num-guessNum)
 			var resp2 string
 			fmt.Scanln(&resp2)
-			if resp2 == "1" {
+			switch resp2 {
+			case "1":
 				fmt.Println("So What number am I thinking about? Will you guess right this time?")
 				goto guessPoint
-			} else {
+			case "2":
 				return
+			default:
+				goto guessPoint
 			}
 		case guessNum > num:
 			fmt.Printf("Your number is %d more than mine. Want to try again? 1. Yes,  2. Quit\n", guessNum-num)
 			var resp2 string
 			fmt.Scanln(&resp2)
-			if resp2 == "1" {
+			switch resp2 {
+			case "1":
 				fmt.Println("So What number am I thinking about? Will you guess right this time?")
 				goto guessPoint
-			} else {
+			case "2":
 				return
+			default:
+				goto guessPoint
 			}
 		case guessNum == num:
 			fmt.Println("Correct! You got me. Want to try another number? 1. Yes,  2. Quit")
