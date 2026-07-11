@@ -2,11 +2,27 @@ package main
 
 import (
 	"fmt"
+	"html/template"
+	"log"
 	"math/rand"
+	"net/http"
 	"strconv"
 )
 
-func main() {
+var tmpl = template.Must(template.ParseFiles("index.html"))
+
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.Error(w, "Not Found", http.StatusNotFound)
+		return
+	}
+	err := tmpl.Execute(w, nil)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+}
+func guessHandler(w http.ResponseWriter, r *http.Request) {
 guessStart:
 	for {
 		fmt.Println("I'm thinking of a number between 1 and 100... Can you guess what number it is?")
@@ -76,4 +92,10 @@ guessStart:
 		}
 
 	}
+}
+
+func main() {
+	http.HandleFunc("/", homeHandler)
+	http.HandleFunc("/guess", guessHandler)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
